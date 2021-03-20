@@ -2,7 +2,6 @@ package hu.zza.hyperskill.filetype.analyzer;
 
 import java.util.stream.Stream;
 
-
 class LazySearchAlgorithm implements SearchAlgorithm {
 
   @Override

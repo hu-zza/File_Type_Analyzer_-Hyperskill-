@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 
-
 class SearchEngine {
 
   private static final HashMap<String, SearchAlgorithm> searchAlgorithmMap = new HashMap<>();
@@ -69,8 +68,7 @@ class SearchEngine {
 
   // LOW-LEVEL
 
-  boolean contains(String fileName, String pattern)
-      throws IOException {
+  boolean contains(String fileName, String pattern) throws IOException {
     try (var br = new BufferedReader(new FileReader(fileName))) {
       return this.searchAlgorithm.contains(br.lines(), pattern);
     }

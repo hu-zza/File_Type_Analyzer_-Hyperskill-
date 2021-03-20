@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-
 class KmpSearchAlgorithm implements SearchAlgorithm {
+
+  @Override
+  public boolean contains(Stream<String> lines, String pattern) {
+    return lines.anyMatch(s -> kmpContains(s, pattern));
+  }
+
+  // LOW-LEVEL
 
   private static boolean kmpContains(String text, String pattern) {
     return 0 < kmpSearch(text, pattern).size();
   }
-
-  // LOW-LEVEL
 
   private static List<Integer> kmpSearch(String text, String pattern) {
     int[] prefixArr = prefixFunction(pattern);
@@ -55,10 +59,5 @@ class KmpSearchAlgorithm implements SearchAlgorithm {
     }
 
     return prefixArr;
-  }
-
-  @Override
-  public boolean contains(Stream<String> lines, String pattern) {
-    return lines.anyMatch(s -> kmpContains(s, pattern));
   }
 }

@@ -9,20 +9,16 @@ import java.io.IOException;
 // With it works even worse...
 // I keep it only for a memento... :-D
 
-
-final class AbsolutelyWrongSearchAlgorithm //implements SearchAlgorithm
-{
+final class AbsolutelyWrongSearchAlgorithm // implements SearchAlgorithm
+ {
 
   public boolean contains(String fileName, String pattern) {
-    final int[] patternArray = pattern
-        .chars()
-        .toArray();
+    final int[] patternArray = pattern.chars().toArray();
 
     final int[] sample = new int[patternArray.length];
     int index = 0;
 
-    try (var br = new BufferedReader(new FileReader(fileName))
-    ) {
+    try (var br = new BufferedReader(new FileReader(fileName))) {
       while (br.ready()) {
         sample[index] = br.read();
 

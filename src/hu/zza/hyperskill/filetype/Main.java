@@ -4,7 +4,6 @@ import hu.zza.hyperskill.filetype.analyzer.FilePatternList;
 import hu.zza.hyperskill.filetype.analyzer.FolderAnalyzer;
 import java.io.FileNotFoundException;
 
-
 public class Main {
 
   public static void main(String[] args) {
